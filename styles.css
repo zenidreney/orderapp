@@ -120,14 +120,41 @@ article{
     text-align: center;
 }
 
-.ordered-items-container,
-.complete-order-container{
+.ordered-items-container{
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.complete-order-container,
+.single-order{
     
     display: flex;
     justify-content: space-between;
+    
+}
+
+.complete-order-container{
     margin: 1rem 1.5rem 3rem;
     
 }
+
+.single-order{
+    margin: 0 1.5rem;
+}
+
+.single-order h2{
+    margin: 0.25rem;
+}
+
+
+/*
+.single-order{
+    display: inherit;
+    width: 100%;
+    background-color: red;
+}
+*/
 
 .complete-order-container{
     border-top: 1px solid #393333;
@@ -139,7 +166,7 @@ article{
     
 }
 
-.ordered-item{
+.ordered-item-name{
     display: flex;
     align-items: center;
 }
