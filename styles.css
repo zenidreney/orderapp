@@ -34,6 +34,12 @@ p {
     color: #8b8b8b;
 }
 
+/*UTILITY*/
+
+.hidden {
+    display: none;
+}
+
 /*SECTIONS*/
 
 /*Header*/

@@ -1,16 +1,29 @@
 
 import { menuArray } from "./data.js";
 
+let totalPrice = 0;
+let orderInstanceId = 1; /*TO KEEP TRACK OF ORDERS*/
 
 document.addEventListener("click", function(e){
         
         if(e.target.dataset.id){   
         handleAddClick(e.target.dataset.id);        
+        } else if(e.target.dataset.removeId){
+        handleRemoveClick(e.target.dataset.removeId);        
         }
-        
 });
 
-  let totalPrice = 0;
+function handleRemoveClick(item){
+        
+                //console.log("Hola");
+                
+                const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
+                console.log(orderDiv);
+        
+                orderDiv.remove();
+        
+        
+}
 
 function handleAddClick(item){
         
@@ -21,6 +34,8 @@ function handleAddClick(item){
                
                 const singleOrderContainer = document.createElement("div");
                 singleOrderContainer.className = "single-order-container";
+                singleOrderContainer.setAttribute("data-order-id", orderInstanceId);
+                //console.log(singleOrderContainer.dataset.orderId);
                 
                         const itemName = document.createElement("h2");
                         itemName.className = "ordered-item-name";
@@ -32,6 +47,7 @@ function handleAddClick(item){
                                 const removeBtn = document.createElement("button");
                                 removeBtn.className = "remove-btn";
                                 removeBtn.textContent = "remove";
+                                removeBtn.setAttribute("data-remove-id", orderInstanceId);
 
                         removeSpan.append(removeBtn); // append button inside span
 
@@ -50,9 +66,19 @@ function handleAddClick(item){
         const totalPriceSpan = document.getElementById("total-price-span");
         totalPriceSpan.textContent = "$" + totalPrice;
         
+        /*Update Order Instance*/
+        
+        orderInstanceId++;
+        
+        /*Show order modal*/
+        
+        const orderContainer = document.getElementById("order-container");
+        //console.log(orderContainer);
+        orderContainer.classList.remove("hidden");
+        
 }
 
-/*FUNCTIONs*/
+
 
 function appendItemHtml(dataArr) {
     
@@ -105,25 +131,3 @@ function appendItemHtml(dataArr) {
 
 appendItemHtml(menuArray);
 
-
-
-
-
-
-
-
-
-
-
-
-
-                //`<article class="item-container">
-                //    <div class="item-pic">🍕</div>
-                //    <div class="item-details">
-                //        <h3>Name</h3>
-                //        <p>Ingredients</p>
-                //        <h3>Price $</h3>
-                //    </div>
-                //    <button class="add-item-btn">+</button>
-                //</article>`
-                
