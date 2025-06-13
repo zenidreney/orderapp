@@ -1,28 +1,34 @@
 
-function appendItemHtml() {
+import { menuArray } from "./data.js";
+
+console.log(menuArray[0].name);
+
+
+function appendItemHtml(dataArr) {
     
     const itemsSection = document.getElementById("render-items");
-    
+        
+        
+        dataArr.forEach(function(item){
+                
         const article = document.createElement("article");
         article.className = "item-container";
     
             const itemPicDiv = document.createElement("div");
             itemPicDiv.className = "item-pic";
-            itemPicDiv.textContent = "🍕";
+            itemPicDiv.textContent = item.emoji;
     
             const itemDetailsDiv = document.createElement("div");
             itemDetailsDiv.className = "item-details";
     
                 const itemName = document.createElement("h3");
-                itemName.textContent = "Item";
+                itemName.textContent = item.name;
     
                 const itemDetails = document.createElement("p");
-                itemDetails.textContent = "Ingredients";
+                itemDetails.textContent = item.ingredients.join(", ");
     
                 const itemPrice = document.createElement("h3");
-                itemPrice.textContent = "Price$";
-    
-    
+                itemPrice.textContent = "$" + item.price;
     
     
             itemDetailsDiv.append(itemName, itemDetails, itemPrice);
@@ -33,15 +39,18 @@ function appendItemHtml() {
     
     
         article.append(itemPicDiv, itemDetailsDiv, addItemBtn);
-    
+                
+                
     itemsSection.append(article);
+                
+        });
+        
     
-    //return appendItemHtml;
     
 }
 
 
-appendItemHtml();
+appendItemHtml(menuArray);
 
 
 
