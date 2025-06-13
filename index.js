@@ -4,15 +4,27 @@ import { menuArray } from "./data.js";
 
 document.addEventListener("click", function(e){
         
-        if(e.target.dataset.id){
-                //console.log(typeof(e.target.dataset.id));
-                
-             const orderedItems = document.getElementById("ordered-items-container");
+        if(e.target.dataset.id){   
+        handleAddClick(e.target.dataset.id);        
+        }
+        
+});
+
+  let totalPrice = 0;
+
+function handleAddClick(item){
+        
+        
+        /*Update UI*/
+        
+        const orderedItems = document.getElementById("ordered-items-container");
                
+                const singleOrderContainer = document.createElement("div");
+                singleOrderContainer.className = "single-order-container";
                 
                         const itemName = document.createElement("h2");
                         itemName.className = "ordered-item-name";
-                        itemName.textContent = menuArray[parseInt(e.target.dataset.id)].name;
+                        itemName.textContent = menuArray[parseInt(item)].name;
 
                         const removeSpan = document.createElement("span");
                         removeSpan.className = "remove-btn-span";
@@ -24,24 +36,21 @@ document.addEventListener("click", function(e){
                         removeSpan.append(removeBtn); // append button inside span
 
                         const itemPrice = document.createElement("h2");
-                        itemPrice.textContent = "$" + menuArray[parseInt(e.target.dataset.id)].price;
+                        itemPrice.textContent = "$" + menuArray[parseInt(item)].price;
                
-        orderedItems.append(itemName, removeSpan, itemPrice);
+                singleOrderContainer.append(itemName, removeSpan, itemPrice);
                 
-                
-                
-        }
+        orderedItems.append(singleOrderContainer);
         
+        /*Update Price*/
         
-});
-
-
-/*
-<h2 class="ordered-item-name">Item</h2>
-                    <span class="remove-btn-span"><button class="remove-btn">remove</button></span>
-                    <h2>Price $</h2>
-*/
-
+      
+        totalPrice += menuArray[parseInt(item)].price;
+        
+        const totalPriceSpan = document.getElementById("total-price-span");
+        totalPriceSpan.textContent = "$" + totalPrice;
+        
+}
 
 /*FUNCTIONs*/
 

@@ -86,7 +86,7 @@ article{
 }
 
 .item-pic {
-    margin-left: 3rem;
+    margin-left: 1.25rem;
     margin-top: 1.5rem;
     font-size: 4rem;
 }
@@ -103,7 +103,7 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.5rem 3rem 1.5rem 0;
+    margin: 1.5rem 1.35rem 1.5rem 0;
     width: 3.125rem;
     height: 3.125rem;
     border-radius: 50%;
@@ -127,7 +127,7 @@ article{
     
 }
 .complete-order-container,
-.single-order{
+.single-order-container{
     
     display: flex;
     justify-content: space-between;
@@ -139,11 +139,11 @@ article{
     
 }
 
-.single-order{
+.single-order-container{
     margin: 0 1.5rem;
 }
 
-.single-order h2{
+.single-order-container h2{
     margin: 0.25rem;
 }
 
@@ -203,6 +203,7 @@ article{
     border-radius: 3px;
     color: #FFFFFF;
     border: none;
+    margin-bottom: 5px;
     
 }
 
