@@ -1,3 +1,5 @@
+/*GLOBAL*/
+
 html,
 body {
     margin: 0;
@@ -32,15 +34,12 @@ p {
     color: #8b8b8b;
 }
 
+/*SECTIONS*/
+
 /*Header*/
 
 header {
     position: relative;
-    /*
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    */
 }
 
 header img {
@@ -49,9 +48,10 @@ header img {
 }
 
 .header-text {
+    
     position: absolute;
     color: whitesmoke;
-    top: 8%;
+    top: 20%;
     left: 8%;
 }
 
@@ -70,7 +70,7 @@ header h2 {
     letter-spacing: 0%;
 }
 
-/*Items Section*/
+/*Main Section*/
 
 article{
     border-bottom: 1px solid #D2D2D2;
@@ -89,7 +89,6 @@ article{
     margin-left: 3rem;
     margin-top: 1.5rem;
     font-size: 4rem;
-    /*flex-basis: 20%;*/
 }
 
 .item-details {
@@ -98,7 +97,6 @@ article{
 }
 
 .add-item-btn {
-    /*flex-basis: 20%;*/
     font-family: "Inter", sans-serif;
     border: 0.05px solid #8b8b8b;
     background-color: #ffffff;
@@ -112,4 +110,69 @@ article{
     font-size: 1.95rem;
     font-weight: 100;
     padding-bottom: 0.3rem;
+    cursor: pointer;
 }
+
+
+/*MODALS*/
+
+.order-container{
+    text-align: center;
+}
+
+.remove-btn,
+.complete-order-btn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+.ordered-items-container,
+.complete-order-container{
+    
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1.5rem 3rem;
+    
+}
+
+.remove-btn-span{
+    flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    border:none;
+   
+}
+
+.remove-btn{
+    border: none;
+    color: #BBBBBB;
+    cursor: pointer;
+}
+
+.remove-btn:hover,
+.remove-btn:focus{
+    color: #393333;
+}
+
+.ordered-items-container{
+    
+    border-bottom: 1px solid #393333;
+    
+}
+
+
+.complete-order-btn{
+    
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+    height: 3.65rem;
+    background-color: #16DB99;
+    border-radius: 3px;
+    color: #FFFFFF;
+    
+}
+
+
