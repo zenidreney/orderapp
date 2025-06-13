@@ -1,48 +1,115 @@
+html,
 body {
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
+    font-family: Smythe;
+}
+
+header,
+main {
+    max-width: 600px;
+    width: 100%;
+}
+
+/*TYPO*/
+
+h1,
+h2 {
+    margin: 16px 0;
+}
+
+h3 {
+    margin: 6px 0;
+    font-weight: 400;
+}
+
+p {
+    margin: 2px 0;
+    font-weight: 400;
+    color: #8b8b8b;
+}
+
+/*Header*/
 
 header {
     position: relative;
+    /*
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 600px;
-    
+    */
 }
 
-header img{
-    
+header img {
     width: 100%;
     height: auto;
 }
 
-.header-text{
+.header-text {
     position: absolute;
     color: whitesmoke;
     top: 8%;
     left: 8%;
-    
 }
 
-header h1{
-
-    font-family: Smythe;
+header h1 {
     font-weight: 400;
     font-size: 2.44rem;
     line-height: 24px;
     letter-spacing: 0%;
 }
 
-header h2{
-
+header h2 {
     font-family: Smythe;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 13.8px;
     letter-spacing: 0%;
+}
 
+/*Items Section*/
+
+article{
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.item-container {
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 3rem;
+    box-sizing: border-box;
+}
+
+.item-pic {
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    font-size: 4rem;
+    /*flex-basis: 20%;*/
+}
+
+.item-details {
+    margin: 1.5rem 0;
+    flex-basis: 60%; /*This adjust the width of the details container as they are spaced between*/
+}
+
+.add-item-btn {
+    /*flex-basis: 20%;*/
+    font-family: "Inter", sans-serif;
+    border: 0.05px solid #8b8b8b;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 3rem 1.5rem 0;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    font-size: 1.95rem;
+    font-weight: 100;
+    padding-bottom: 0.3rem;
 }
