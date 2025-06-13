@@ -14,15 +14,30 @@ document.addEventListener("click", function(e){
 });
 
 function handleRemoveClick(item){
-        
-                //console.log("Hola");
-                
+
                 const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
-                console.log(orderDiv);
+                if(!orderDiv) return;
+          
+                const menuId = orderDiv.getAttribute("data-menu-id");
+                if(menuId === null) return;
+       
+                const itemPrice = menuArray[parseInt(menuId)].price;
+         
+                totalPrice -= itemPrice;
+
+        
+                /*Update UI*/
+        
+                const totalPriceSpan = document.getElementById("total-price-span");
+                totalPriceSpan.textContent = "$" + totalPrice;
         
                 orderDiv.remove();
         
+                if(totalPrice === 0) {
+                document.getElementById("order-container").classList.add("hidden");
+                }
         
+         
 }
 
 function handleAddClick(item){
@@ -35,6 +50,7 @@ function handleAddClick(item){
                 const singleOrderContainer = document.createElement("div");
                 singleOrderContainer.className = "single-order-container";
                 singleOrderContainer.setAttribute("data-order-id", orderInstanceId);
+                singleOrderContainer.setAttribute("data-menu-id", item);
                 //console.log(singleOrderContainer.dataset.orderId);
                 
                         const itemName = document.createElement("h2");
