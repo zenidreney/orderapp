@@ -16,10 +16,10 @@ document.addEventListener("click", function(e){
 function handleRemoveClick(item){
 
                 const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
-                if(!orderDiv) return;
+                //if(!orderDiv) return;
           
                 const menuId = orderDiv.getAttribute("data-menu-id");
-                if(menuId === null) return;
+                //if(menuId === null) return;
        
                 const itemPrice = menuArray[parseInt(menuId)].price;
          
