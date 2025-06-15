@@ -71,35 +71,37 @@
                 <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
             </section>
             
-            <section class="payment-details hidden">
-                
-                <form>
-                
-                <p>Enter Card Details </p>
-                    <input 
-                        type="text" 
-                        placeholder="Enter your name"
-                        required>
+            <div id="modal-overlay" class="modal-overlay">
+                <section id= "payment-details" class="payment-details">
                     
-                    <input 
-                        type="text"
-                        inputmode="numeric"
-                        pattern=[0-9]{13,19}
-                        placeholder="Enter card number"
-                        required>
+                    <form>
                     
-                    <input 
-                        type="text" 
-                        inputmode="numeric"
-                        pattern=[0-9]{3,4}
-                        placeholder="Enter CVV"
-                        required>
+                    <p>Enter Card Details </p>
+                        <input 
+                            type="text" 
+                            placeholder="Enter your name"
+                            required>
+                        
+                        <input 
+                            type="text"
+                            inputmode="numeric"
+                            pattern=[0-9]{13,19}
+                            placeholder="Enter card number"
+                            required>
+                        
+                        <input 
+                            type="text" 
+                            inputmode="numeric"
+                            pattern=[0-9]{3,4}
+                            placeholder="Enter CVV"
+                            required>
+                        
+                        <button class="pay-btn f" id="pay-btn">Pay</button>
+                    </form>
                     
-                    <button class="pay-btn f" id="pay-btn">Pay</button>
-                </form>
-                
-                
-            </section>
+                    
+                </section>
+            </div>
             
             
         </main>

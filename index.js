@@ -10,8 +10,15 @@ document.addEventListener("click", function(e){
         handleAddClick(e.target.dataset.id);        
         } else if(e.target.dataset.removeId){
         handleRemoveClick(e.target.dataset.removeId);        
+        } else if(e.target.id === "complete-order-btn"){
+        handleOrderBtn();
         }
 });
+
+function handleOrderBtn(){
+        const orderModal = document.getElementById("payment-details");
+        orderModal.classList.remove("hidden");
+}
 
 function handleRemoveClick(item){
 
@@ -93,8 +100,6 @@ function handleAddClick(item){
         orderContainer.classList.remove("hidden");
         
 }
-
-
 
 function appendItemHtml(dataArr) {
     

@@ -142,14 +142,6 @@ article {
     margin: 0.25rem;
 }
 
-/*
-.single-order{
-    display: inherit;
-    width: 100%;
-    background-color: red;
-}
-*/
-
 .complete-order-container {
     border-top: 1px solid #393333;
 }
@@ -199,7 +191,8 @@ article {
 
 /*Payment Modal*/
 
-.payment-details {
+.payment-details,
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -258,6 +251,20 @@ form input::placeholder {
 }
 
 /*UTILITY*/
+
+.modal-overlay{
+    background: radial-gradient(rgba(0, 0, 0, 0.5), transparent);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: none;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    
+}
+
 
 .hidden {
     display: none;
