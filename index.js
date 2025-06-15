@@ -12,37 +12,74 @@ document.addEventListener("click", function(e){
         handleRemoveClick(e.target.dataset.removeId);        
         } else if(e.target.id === "complete-order-btn"){
         handleOrderBtn();
+        } else if(e.target.id === "pay-btn"){
+        handlePayBtn(e);
         }
 });
 
+function handlePayBtn(click){
+        
+        /*To make sure that the entered data is not visible in the toolbar*/
+        click.preventDefault(); 
+        
+        /*Check if the form is Filled*/
+        const paymentForm = document.getElementById("payment-form");
+        
+        if(!paymentForm.checkValidity()) {
+        alert("Please Fill In");
+        return;
+        }
+        
+        /*Close the Modal*/
+        const orderModal = document.getElementById("modal-overlay");
+        orderModal.classList.add("hidden");
+        
+        /*Add Confirmation*/
+        
+        const orderContainer = document.getElementById("order-container");
+        orderContainer.classList.add("hidden");
+        
+        const confirmOrder = document.getElementById("confirm-order");
+        
+                const confirmPara = document.createElement("p");
+        
+                const fullName = document.getElementById("name-input").value.trim();
+                const firstName = fullName.split(" ")[0];
+                console.log(firstName);
+        
+                confirmPara.textContent = `Thank you ${firstName}! Your order is on its way`;
+        
+        confirmOrder.append(confirmPara);
+
+}
+
 function handleOrderBtn(){
-        const orderModal = document.getElementById("payment-details");
+        const orderModal = document.getElementById("modal-overlay");
         orderModal.classList.remove("hidden");
 }
 
 function handleRemoveClick(item){
 
-                const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
+        const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
                 if(!orderDiv) return;
           
-                const menuId = orderDiv.getAttribute("data-menu-id");
+        const menuId = orderDiv.getAttribute("data-menu-id");
                 if(menuId === null) return;
        
-                const itemPrice = menuArray[Number(menuId)].price;
+        const itemPrice = menuArray[Number(menuId)].price;
          
-                totalPrice -= itemPrice;
-
+        totalPrice -= itemPrice;
         
-                /*Update UI*/
+        /*Update UI*/
         
-                const totalPriceSpan = document.getElementById("total-price-span");
-                totalPriceSpan.textContent = "$" + totalPrice;
+        const totalPriceSpan = document.getElementById("total-price-span");
+        totalPriceSpan.textContent = "$" + totalPrice;
         
-                orderDiv.remove();
+        orderDiv.remove();
         
-                if(totalPrice === 0) {
-                document.getElementById("order-container").classList.add("hidden");
-                }
+        if(totalPrice === 0) {
+        document.getElementById("order-container").classList.add("hidden");
+        }
         
          
 }

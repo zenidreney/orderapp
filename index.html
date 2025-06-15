@@ -27,6 +27,8 @@
             </div>
         </header>
 
+        <!--ITEMS LIST-->
+
         <main>
             <section id="render-items">
                 <!--
@@ -42,10 +44,11 @@
                 -->
             </section>
 
+            <!--ORDER-->
+
             <section id="order-container" class="order-container hidden">
                 <h2>Your Order</h2>
-                <div id= "ordered-items-container" class="ordered-items-container">
-                   
+                <div id="ordered-items-container" class="ordered-items-container">
                     <!--
                     <div class="single-order-container">
                         <h2 id="ordered-item-name" class="ordered-item-name">Item</h2>
@@ -58,11 +61,7 @@
                         <span class="remove-btn-span"><button class="remove-btn">remove</button></span>
                         <h2>Price $</h2>
                     </div>
-                    
                     -->
-                    
-                    
-                    
                 </div>
                 <div class="complete-order-container">
                     <h2>Total Price</h2>
@@ -70,40 +69,45 @@
                 </div>
                 <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
             </section>
-            
-            <div id="modal-overlay" class="modal-overlay">
-                <section id= "payment-details" class="payment-details">
-                    
-                    <form>
-                    
-                    <p>Enter Card Details </p>
-                        <input 
-                            type="text" 
-                            placeholder="Enter your name"
-                            required>
-                        
-                        <input 
+
+            <!--PAYMENT-->
+
+            <div id="modal-overlay" class="modal-overlay hidden">
+                <section id="payment-details" class="payment-details">
+                    <form id="payment-form">
+                        <p>Enter Card Details</p>
+                        <input type="text" id="name-input" name="name" placeholder="Enter your name" required />
+
+                        <input
                             type="text"
                             inputmode="numeric"
-                            pattern=[0-9]{13,19}
+                            pattern="[0-9]{13,19}"
+                            id="card-input"
+                            name="card-input"
                             placeholder="Enter card number"
-                            required>
-                        
-                        <input 
-                            type="text" 
+                            required />
+
+                        <input
+                            type="text"
                             inputmode="numeric"
-                            pattern=[0-9]{3,4}
+                            pattern="[0-9]{3,4}"
+                            id="cvv-input"
+                            name="cvv"
                             placeholder="Enter CVV"
-                            required>
-                        
+                            required />
+
                         <button class="pay-btn f" id="pay-btn">Pay</button>
                     </form>
-                    
-                    
                 </section>
             </div>
-            
-            
+
+            <!--CONFIRMATION-->
+
+            <section id="confirm-order" class="confirm-order">
+                <!--Confirmation from JS-->
+
+                <!--<p>Thanks, Name! Your order is on its way!</p>-->
+            </section>
         </main>
 
         <script src="index.js" type="module"></script>
