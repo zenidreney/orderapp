@@ -16,12 +16,12 @@ document.addEventListener("click", function(e){
 function handleRemoveClick(item){
 
                 const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
-                //if(!orderDiv) return;
+                if(!orderDiv) return;
           
                 const menuId = orderDiv.getAttribute("data-menu-id");
-                //if(menuId === null) return;
+                if(menuId === null) return;
        
-                const itemPrice = menuArray[parseInt(menuId)].price;
+                const itemPrice = menuArray[Number(menuId)].price;
          
                 totalPrice -= itemPrice;
 
@@ -55,7 +55,7 @@ function handleAddClick(item){
                 
                         const itemName = document.createElement("h2");
                         itemName.className = "ordered-item-name";
-                        itemName.textContent = menuArray[parseInt(item)].name;
+                        itemName.textContent = menuArray[Number(item)].name;
 
                         const removeSpan = document.createElement("span");
                         removeSpan.className = "remove-btn-span";
@@ -68,7 +68,7 @@ function handleAddClick(item){
                         removeSpan.append(removeBtn); // append button inside span
 
                         const itemPrice = document.createElement("h2");
-                        itemPrice.textContent = "$" + menuArray[parseInt(item)].price;
+                        itemPrice.textContent = "$" + menuArray[Number(item)].price;
                
                 singleOrderContainer.append(itemName, removeSpan, itemPrice);
                 
@@ -77,7 +77,7 @@ function handleAddClick(item){
         /*Update Price*/
         
       
-        totalPrice += menuArray[parseInt(item)].price;
+        totalPrice += menuArray[Number(item)].price;
         
         const totalPriceSpan = document.getElementById("total-price-span");
         totalPriceSpan.textContent = "$" + totalPrice;
