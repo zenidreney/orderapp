@@ -225,15 +225,13 @@ article {
 
 form {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
     font-weight: 700;
-    font-size: 24px;
-    line-height: 31.12px;
+    font-size: 1.5rem;
+    line-height: 2em;
     letter-spacing: 0%;
-
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1em;
     padding: 16px;
     width: 90%;
 }
@@ -245,8 +243,8 @@ form p {
 
 form input,
 .pay-btn {
-    height: 62px;
-    font-size: 20px;
+    height: 3.875rem;
+    font-size: 1.25rem;
 }
 
 .pay-btn {
@@ -258,7 +256,7 @@ form input::placeholder {
     padding-left: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 31.12px;
     letter-spacing: 0%;
 }
@@ -266,15 +264,15 @@ form input::placeholder {
 .confirm-order {
     font-family: Smythe;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 16.8px;
     letter-spacing: 0%;
     text-align: center;
     padding: 51px 66px;
 }
 
-.confirm-order p{
-    color: #065F46;
+.confirm-order p {
+    color: #065f46;
 }
 
 /*UTILITY*/
@@ -288,8 +286,8 @@ form input::placeholder {
     .modal-overlay {
         width: 95vw;
     }
-    
-    .confirm-order{
+
+    .confirm-order {
         line-height: 2.5rem;
     }
 }
