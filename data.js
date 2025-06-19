@@ -1,23 +1,30 @@
 export const menuArray = [
     {
-        name: "Pizza",
-        ingredients: ["pepperoni", "mushrom", "mozarella"],
+        name: "Melissa Officinalis",
+        ingredients: ["Sedative", "Anti-stress", "Digestive"],
         id: 0,
         price: 14,
-        emoji: "🍕"
+        emoji: "🌿"
     },
     {
-        name: "Hamburger",
-        ingredients: ["beef", "cheese", "lettuce"],
+        name: "Echinacea",
+        ingredients: ["Medicinal", "immune-booster"],
         price: 13,
-        emoji: "🍔",
+        emoji: "🌸",
         id: 1
     },
     {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
+        name: "Chamomile",
+        ingredients: ["Anti-stress", "Digestive", "Anti-inflammatory", "Skin-soothing"],
         price: 12,
-        emoji: "🍺",
+        emoji: "🌼",
         id: 2
+    },
+    {
+        name: "Basil",
+        ingredients: ["Anti-oxidant", "Anti-inflammatory", "Anti-bacterial"],
+        price: 8,
+        emoji: "🌱",
+        id: 3
     }
 ];
