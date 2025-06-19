@@ -17,6 +17,32 @@ document.addEventListener("click", function(e){
         }
 });
 
+function resetOrder(){
+        
+        
+        /*Close the Modal*/
+        
+        const orderModal = document.getElementById("modal-overlay");
+        orderModal.classList.add("hidden");
+        
+        /*Close Order Container*/
+        
+        const orderContainer = document.getElementById("order-container");
+        orderContainer.classList.add("hidden");
+        
+        
+        /*Reset Order Container*/
+        
+        document.getElementById("ordered-items-container").innerHTML = "";
+
+        totalPrice = 0;
+        orderInstanceId = 1;
+        
+        /*Reset Form*/
+
+        document.getElementById("payment-form").reset();
+}
+
 function handlePayBtn(click){
         
         /*To make sure that the entered data is not visible in the toolbar*/
@@ -28,16 +54,9 @@ function handlePayBtn(click){
         if(!paymentForm.checkValidity()) {
         alert("Please Fill In");
         return;
-        }
+        } 
         
-        /*Close the Modal*/
-        const orderModal = document.getElementById("modal-overlay");
-        orderModal.classList.add("hidden");
-        
-        /*Add Confirmation*/
-        
-        const orderContainer = document.getElementById("order-container");
-        orderContainer.classList.add("hidden");
+        /*Show Confirmation*/
         
         const confirmOrder = document.getElementById("confirm-order");
         
@@ -45,12 +64,14 @@ function handlePayBtn(click){
         
                 const fullName = document.getElementById("name-input").value.trim();
                 const firstName = fullName.split(" ")[0];
-                console.log(firstName);
+                //console.log(firstName);
         
                 confirmPara.textContent = `Thank you ${firstName}! Your order is on its way`;
         
         confirmOrder.append(confirmPara);
-
+        
+        resetOrder();
+        
 }
 
 function handleOrderBtn(){
@@ -86,6 +107,7 @@ function handleRemoveClick(item){
 
 function handleAddClick(item){
         
+        document.getElementById("confirm-order").innerHTML = "";
         
         /*Update UI*/
         
