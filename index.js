@@ -1,7 +1,8 @@
 import { menuArray } from "./data.js";
 
 let totalPrice = 0;
-let orderInstanceId = 1; /*TO KEEP TRACK OF ORDERS*/
+let orderInstanceId = 1; /*TO KEEP TRACK OF TOTAL ORDERS*/
+let itemsCount = {}; /*TO KEEP TRACK OF INDIVIDUAL ITEM ORDERS*/
 
 document.addEventListener("click", function (e) {
         if (e.target.dataset.id) {
@@ -99,6 +100,11 @@ function handleAddClick(item) {
         /*RESET PRIOR PURCHASE*/
 
         document.getElementById("confirm-order").innerHTML = "";
+        
+        itemsCount[item] = (itemsCount[item] || 0) + 1;
+        
+        //console.log(itemsCount[item]);
+        
 
         /*Update UI*/
 
@@ -108,6 +114,11 @@ function handleAddClick(item) {
 
         if (alreadyOrderedDiv) {
                 console.log(alreadyOrderedDiv);
+                
+                const displayQuantity = alreadyOrderedDiv.querySelector("h2:first-child");
+                
+                displayQuantity.textContent = `${menuArray[item].name} X ${itemsCount[item]}`;
+                
 
                 const displayPrice = alreadyOrderedDiv.querySelector("h2:last-child");
 
