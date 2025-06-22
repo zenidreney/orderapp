@@ -74,40 +74,61 @@ function handleOrderBtn() {
 }
 
 function handleRemoveClick(item) {
+        
+        
         const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
         if (!orderDiv) return;
 
         const menuId = orderDiv.getAttribute("data-menu-id");
         if (menuId === null) return;
-
+        
         const itemPrice = menuArray[Number(menuId)].price;
+        
+        /*Update Global Vars*/
+        
+        itemsCount[menuId] = (itemsCount[menuId] || 0) - 1;
 
         totalPrice -= itemPrice;
 
         /*Update UI*/
         
-        const totalPriceSpan = document.getElementById("total-price-span");
-        totalPriceSpan.textContent = "$" + totalPrice;
+        /*How many items ordered*/
         
-        console.log(orderDiv);
+        const displayQuantity = orderDiv.querySelector("h2:first-child");
+        
+        if (itemsCount[menuId] === 1) {
+                
+                displayQuantity.textContent = `${menuArray[menuId].name}`; 
+        } else {
+                displayQuantity.textContent = `${menuArray[menuId].name} X ${itemsCount[menuId]}`;
+        }
+        
+        /*Item Display Price*/
         
         const displayPrice = orderDiv.querySelector("h2:last-child");
         
-        console.log(displayPrice);
+        //console.log(displayPrice);
         
         let priceEl = parseFloat(displayPrice.textContent.replace("$", ""));
         
-        console.log(priceEl);
+        //console.log(priceEl);
         
         priceEl -= itemPrice;
         
-        console.log(priceEl);
+        //console.log(priceEl);
         
         displayPrice.textContent = `$ ${priceEl}`;
         
         if (priceEl === 0) {
-                orderDiv.innerHTML = "";
+                orderDiv.remove();
         }
+       
+        /*Total Price*/
+        
+        const totalPriceSpan = document.getElementById("total-price-span");
+        totalPriceSpan.textContent = "$" + totalPrice;
+        
+        //console.log(orderDiv);
 
         if (totalPrice === 0) {
                 document.getElementById("order-container").classList.add("hidden");
@@ -122,7 +143,7 @@ function handleAddClick(item) {
         
         itemsCount[item] = (itemsCount[item] || 0) + 1;
         
-        //console.log(itemsCount[item]);
+        console.log(itemsCount[item]);
         
 
         /*Update UI*/
