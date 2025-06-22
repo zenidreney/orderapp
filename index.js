@@ -83,54 +83,31 @@ function handleRemoveClick(item) {
         const itemPrice = menuArray[Number(menuId)].price;
 
         totalPrice -= itemPrice;
+        
+        
 
         /*Update UI*/
         
-        const orderedItems = document.getElementById("ordered-items-container");
-
-        const alreadyOrderedDiv = document.querySelector(`[data-menu-id='${item}']`);
-
-        if (alreadyOrderedDiv) {
-                console.log(alreadyOrderedDiv);
-                
-                const displayQuantity = alreadyOrderedDiv.querySelector("h2:first-child");
-                
-                displayQuantity.textContent = `${menuArray[item].name} X ${itemsCount[item]}`;
-                
-
-                const displayPrice = alreadyOrderedDiv.querySelector("h2:last-child");
-
-                console.log(displayPrice);
-
-                let priceEl = parseFloat(displayPrice.textContent.replace("$", ""));
-
-                console.log(priceEl);
-
-                priceEl -= menuArray[Number(item)].price;
-
-                console.log(priceEl);
-
-                displayPrice.textContent = "$" + priceEl;
-
-                /*Update Price*/
-
-                totalPrice -= menuArray[Number(item)].price;
-
-                /*Update Order Instance*/
-
-                //orderInstanceId++;
-        }
+        console.log(orderDiv);
         
+        const displayPrice = orderDiv.querySelector("h2:last-child");
         
+        console.log(displayPrice);
         
+        let priceEl = parseFloat(displayPrice.textContent.replace("$", ""));
+        
+        console.log(priceEl);
+        
+        priceEl -= itemPrice;
+        
+        console.log(priceEl);
+        
+        displayPrice.textContent = `$ ${priceEl}`;
 
-        const totalPriceSpan = document.getElementById("total-price-span");
-        totalPriceSpan.textContent = "$" + totalPrice;
-
-        //orderDiv.remove();
 
         if (totalPrice === 0) {
                 document.getElementById("order-container").classList.add("hidden");
+                
         }
 }
 
@@ -151,7 +128,7 @@ function handleAddClick(item) {
         const alreadyOrderedDiv = document.querySelector(`[data-menu-id='${item}']`);
 
         if (alreadyOrderedDiv) {
-                console.log(alreadyOrderedDiv);
+                
                 
                 const displayQuantity = alreadyOrderedDiv.querySelector("h2:first-child");
                 
@@ -160,15 +137,15 @@ function handleAddClick(item) {
 
                 const displayPrice = alreadyOrderedDiv.querySelector("h2:last-child");
 
-                console.log(displayPrice);
+               
 
                 let priceEl = parseFloat(displayPrice.textContent.replace("$", ""));
 
-                console.log(priceEl);
+            
 
                 priceEl += menuArray[Number(item)].price;
 
-                console.log(priceEl);
+             
 
                 displayPrice.textContent = "$" + priceEl;
 
