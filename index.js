@@ -83,10 +83,11 @@ function handleRemoveClick(item) {
         const itemPrice = menuArray[Number(menuId)].price;
 
         totalPrice -= itemPrice;
-        
-        
 
         /*Update UI*/
+        
+        const totalPriceSpan = document.getElementById("total-price-span");
+        totalPriceSpan.textContent = "$" + totalPrice;
         
         console.log(orderDiv);
         
@@ -103,7 +104,10 @@ function handleRemoveClick(item) {
         console.log(priceEl);
         
         displayPrice.textContent = `$ ${priceEl}`;
-
+        
+        if (priceEl === 0) {
+                orderDiv.innerHTML = "";
+        }
 
         if (totalPrice === 0) {
                 document.getElementById("order-container").classList.add("hidden");
