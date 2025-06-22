@@ -117,7 +117,7 @@ article {
 /*MODALS*/
 
 .order-container {
-    text-align: center;
+    text-align: left;
 }
 
 .ordered-items-container {
@@ -281,6 +281,10 @@ form input::placeholder {
 }
 
 /*UTILITY*/
+
+.text-center {
+    text-align: center;
+}
 
 .hidden {
     display: none;

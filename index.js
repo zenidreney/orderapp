@@ -157,7 +157,7 @@ function handleAddClick(item){
         const orderContainer = document.getElementById("order-container");
         //console.log(orderContainer);
         orderContainer.classList.remove("hidden");
-        
+        orderContainer.scrollIntoView({behavior: "smooth"});
 }
 
 function appendItemHtml(dataArr) {
