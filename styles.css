@@ -16,20 +16,26 @@ main {
     width: 100%;
 }
 
+button:hover,
+button:focus {
+    filter: brightness(0.9)
+}
+
+
 /*TYPO*/
 
 h1,
 h2 {
-    margin: 16px 0;
+    margin: 1em 0;
 }
 
 h3 {
-    margin: 6px 0;
+    margin: 0.375em 0;
     font-weight: 400;
 }
 
 p {
-    margin: 2px 0;
+    margin: 0.125em 0;
     font-weight: 400;
     color: #8b8b8b;
 }
@@ -127,18 +133,18 @@ article {
     display: flex;
     flex-direction: column;
 }
+
+
 .complete-order-container,
 .single-order-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1em;
 }
 
-.complete-order-container {
-    margin: 1rem 1.5rem 3rem;
-}
-
-.single-order-container {
-    margin: 0 1.5rem;
+.ordered-item-price {
+    justify-self: end;
 }
 
 .single-order-container h2 {
@@ -154,18 +160,13 @@ article {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
 .ordered-item-name {
     display: flex;
     align-items: center;
 }
 
-.remove-btn-span {
-    display: flex;
-    flex: 0 1 80%;
-    align-items: center;
-    width: 120px;
-    border: none;
-}
 
 .remove-btn {
     border: none;
@@ -173,7 +174,12 @@ article {
     font-weight: 700;
     background-color: #E63946;
     border-radius: 3px;
-    cursor: pointer;
+    cursor: pointer; 
+    /*
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    */
 }
 
 .remove-btn:hover,
@@ -209,10 +215,6 @@ article {
     
 }
 
-button:hover,
-button:focus {
-    filter: brightness(0.9)
-}
 
 /*Payment Modal with its Overlay Effect*/
 
@@ -328,7 +330,7 @@ form input::placeholder {
 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     
     .order-container {
         width: 18em;

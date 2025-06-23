@@ -1,6 +1,6 @@
 export const menuArray = [
     {
-        name: "Melissa Officinalis",
+        name: "Lemon Balm",
         ingredients: ["Sedative", "Anti-stress", "Digestive"],
         id: 0,
         price: 14,

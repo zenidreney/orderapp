@@ -192,20 +192,20 @@ function handleAddClick(item) {
                         itemName.className = "ordered-item-name";
                         itemName.textContent = menuArray[Number(item)].name;
 
-                        const removeSpan = document.createElement("span");
-                        removeSpan.className = "remove-btn-span";
+                        //const removeSpan = document.createElement("span");
+                        //removeSpan.className = "remove-btn-span";
 
-                                const removeBtn = document.createElement("button");
-                                removeBtn.className = "remove-btn";
-                                removeBtn.textContent = "remove";
-                                removeBtn.setAttribute("data-remove-id", orderInstanceId);
+                        const removeBtn = document.createElement("button");
+                        removeBtn.className = "remove-btn";
+                        removeBtn.textContent = "remove";
+                        removeBtn.setAttribute("data-remove-id", orderInstanceId);
 
-                        removeSpan.append(removeBtn); // append button inside span
+                        //removeSpan.append(removeBtn); // append button inside span
 
                         const itemPrice = document.createElement("h2");
                         itemPrice.textContent = "$" + menuArray[Number(item)].price;
 
-                singleOrderContainer.append(itemName, removeSpan, itemPrice);
+                singleOrderContainer.append(itemName, removeBtn, itemPrice);
 
                 orderedItems.append(singleOrderContainer);
 
