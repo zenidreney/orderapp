@@ -140,18 +140,19 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1em;
+   
 }
 
 /*
-.single-order-container {
-    position: relative;
+.ordered-item-name {
+    flex-grow: 1;
 }
 */
 
-.ordered-item-price {
-    justify-self: end;
+.single-order-container {
+    position: relative;
 }
+
 
 .single-order-container h2 {
     margin: 0.25rem;
@@ -181,11 +182,9 @@ article {
     background-color: #E63946;
     border-radius: 3px;
     cursor: pointer; 
-    /*
     position: absolute;
     top: 10px;
-    right: 45px;
-    */
+    right: 46px;
 }
 
 .remove-btn:hover,
