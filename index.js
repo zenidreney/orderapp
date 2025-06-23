@@ -30,6 +30,8 @@ function resetOrder() {
         /*Reset Order Container*/
 
         document.getElementById("ordered-items-container").innerHTML = "";
+        
+        /*Reset Global Variables*/
 
         totalPrice = 0;
         orderInstanceId = 1;
@@ -41,6 +43,7 @@ function resetOrder() {
 }
 
 function handlePayBtn(click) {
+        
         /*To make sure that the entered data is not visible in the toolbar*/
         click.preventDefault();
 
@@ -59,6 +62,7 @@ function handlePayBtn(click) {
         const confirmPara = document.createElement("p");
 
         const fullName = document.getElementById("name-input").value.trim();
+        
         const firstName = fullName.split(" ")[0];
         //console.log(firstName);
 
@@ -78,7 +82,7 @@ function handleRemoveClick(item) {
         
         
         const orderDiv = document.querySelector(`[data-order-id="${item}"]`);
-        if (!orderDiv) return;
+        if (!orderDiv) return; /*Becasue it there is not item returns null*/
 
         const menuId = orderDiv.getAttribute("data-menu-id");
         if (menuId === null) return;
@@ -159,21 +163,14 @@ function handleAddClick(item) {
                 
                 
                 const displayQuantity = alreadyOrderedDiv.querySelector("h2:first-child");
-                
                 displayQuantity.textContent = `${menuArray[item].name} X ${itemsCount[item]}`;
                 
 
                 const displayPrice = alreadyOrderedDiv.querySelector("h2:last-child");
 
-               
-
                 let priceEl = parseFloat(displayPrice.textContent.replace("$", ""));
 
-            
-
                 priceEl += menuArray[Number(item)].price;
-
-             
 
                 displayPrice.textContent = "$" + priceEl;
 
@@ -191,22 +188,22 @@ function handleAddClick(item) {
                 singleOrderContainer.setAttribute("data-menu-id", item);
                 //console.log(singleOrderContainer.dataset.orderId);
 
-                const itemName = document.createElement("h2");
-                itemName.className = "ordered-item-name";
-                itemName.textContent = menuArray[Number(item)].name;
+                        const itemName = document.createElement("h2");
+                        itemName.className = "ordered-item-name";
+                        itemName.textContent = menuArray[Number(item)].name;
 
-                const removeSpan = document.createElement("span");
-                removeSpan.className = "remove-btn-span";
+                        const removeSpan = document.createElement("span");
+                        removeSpan.className = "remove-btn-span";
 
-                const removeBtn = document.createElement("button");
-                removeBtn.className = "remove-btn";
-                removeBtn.textContent = "remove";
-                removeBtn.setAttribute("data-remove-id", orderInstanceId);
+                                const removeBtn = document.createElement("button");
+                                removeBtn.className = "remove-btn";
+                                removeBtn.textContent = "remove";
+                                removeBtn.setAttribute("data-remove-id", orderInstanceId);
 
-                removeSpan.append(removeBtn); // append button inside span
+                        removeSpan.append(removeBtn); // append button inside span
 
-                const itemPrice = document.createElement("h2");
-                itemPrice.textContent = "$" + menuArray[Number(item)].price;
+                        const itemPrice = document.createElement("h2");
+                        itemPrice.textContent = "$" + menuArray[Number(item)].price;
 
                 singleOrderContainer.append(itemName, removeSpan, itemPrice);
 
@@ -239,29 +236,29 @@ function appendItemHtml(dataArr) {
                 const article = document.createElement("article");
                 article.className = "item-container";
 
-                const itemPicDiv = document.createElement("div");
-                itemPicDiv.className = "item-pic";
-                itemPicDiv.textContent = item.emoji;
+                        const itemPicDiv = document.createElement("div");
+                        itemPicDiv.className = "item-pic";
+                        itemPicDiv.textContent = item.emoji;
 
-                const itemDetailsDiv = document.createElement("div");
-                itemDetailsDiv.className = "item-details";
+                        const itemDetailsDiv = document.createElement("div");
+                        itemDetailsDiv.className = "item-details";
 
-                const itemName = document.createElement("h3");
-                itemName.textContent = item.name;
+                                const itemName = document.createElement("h3");
+                                itemName.textContent = item.name;
 
-                const itemDetails = document.createElement("p");
-                itemDetails.textContent = item.ingredients.join(", ");
+                                const itemDetails = document.createElement("p");
+                                itemDetails.textContent = item.ingredients.join(", ");
 
-                const itemPrice = document.createElement("h3");
-                itemPrice.textContent = "$" + item.price;
+                                const itemPrice = document.createElement("h3");
+                                itemPrice.textContent = "$" + item.price;
 
-                itemDetailsDiv.append(itemName, itemDetails, itemPrice);
+                        itemDetailsDiv.append(itemName, itemDetails, itemPrice);
 
-                const addItemBtn = document.createElement("button");
-                addItemBtn.setAttribute("data-id", item.id);
+                        const addItemBtn = document.createElement("button");
+                        addItemBtn.setAttribute("data-id", item.id);
 
-                addItemBtn.className = "add-item-btn";
-                addItemBtn.textContent = "+";
+                        addItemBtn.className = "add-item-btn";
+                        addItemBtn.textContent = "+";
 
                 article.append(itemPicDiv, itemDetailsDiv, addItemBtn);
 
