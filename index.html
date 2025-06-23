@@ -21,7 +21,7 @@
     <body>
         <header>
             <div class="header-img">
-                <!--<img src="/media/catnip.jpg" />-->
+                <!--Background Color-->
             </div>
             <div class="header-text">
                 <h1>The Healing Leaf</h1>
@@ -35,7 +35,6 @@
             <section id="render-items">
                 <!--
                 <article class="item-container">
-                    <div class="item-pic">🍕</div>
                     <div class="item-details">
                         <h3>Name</h3>
                         <p>Ingredients</p>
@@ -76,6 +75,7 @@
 
             <div id="modal-overlay" class="modal-overlay hidden">
                 <section id="payment-details" class="payment-details">
+                    <button class="modal-close-btn" id="modal-close-btn">X</button>
                     <form id="payment-form">
                         <p>Enter Card Details</p>
                         <input type="text" id="name-input" name="name" placeholder="Enter your name" required />
@@ -86,7 +86,7 @@
                             pattern="[0-9]{13,19}"
                             id="card-input"
                             name="card-input"
-                            placeholder="Enter card number"
+                            placeholder="Card number (min. 13 numbers)"
                             required />
 
                         <input
@@ -95,7 +95,7 @@
                             pattern="[0-9]{3,4}"
                             id="cvv-input"
                             name="cvv"
-                            placeholder="Enter CVV"
+                            placeholder="CVV (min. 3 numbers)"
                             required />
 
                         <button class="pay-btn f" id="pay-btn">Pay</button>
@@ -113,5 +113,17 @@
         </main>
 
         <script src="index.js" type="module"></script>
+
+        <script>
+            
+            /*Simple Modal Close Function*/
+            
+            const modalCloseBtn = document.getElementById("modal-close-btn");
+
+            modalCloseBtn.addEventListener("click", function(){
+                const orderModal = document.getElementById("modal-overlay");
+                orderModal.classList.add("hidden");
+            })
+        </script>
     </body>
 </html>
