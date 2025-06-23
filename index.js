@@ -204,6 +204,7 @@ function handleAddClick(item) {
 
                         const itemPrice = document.createElement("h2");
                         itemPrice.textContent = "$" + menuArray[Number(item)].price;
+                        itemPrice.className = "item-price";
 
                 singleOrderContainer.append(itemName, removeBtn, itemPrice);
 

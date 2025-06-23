@@ -143,16 +143,22 @@ article {
    
 }
 
-/*
-.ordered-item-name {
-    flex-grow: 1;
-}
-*/
+    .ordered-item-name{
+        flex-basis: 60%;
 
-.single-order-container {
-    position: relative;
-}
+    }
+    .remove-btn {
+        flex-basis: 20%;
 
+    }
+    .item-price {
+        flex-basis: 20%;
+
+    }
+
+    .item-price {
+        text-align: right;
+    }
 
 .single-order-container h2 {
     margin: 0.25rem;
@@ -182,9 +188,7 @@ article {
     background-color: #E63946;
     border-radius: 3px;
     cursor: pointer; 
-    position: absolute;
-    top: 10px;
-    right: 46px;
+    max-width: 5rem;
 }
 
 .remove-btn:hover,
