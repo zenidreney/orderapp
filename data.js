@@ -20,11 +20,11 @@ export const menuArray = [
         emoji: "🌼",
         id: 2
     },
-    {
-        name: "Basil",
-        ingredients: ["Anti-oxidant", "Anti-inflammatory", "Anti-bacterial"],
-        price: 8,
-        emoji: "🌱",
-        id: 3
-    }
+    //{
+    //    name: "Basil",
+    //    ingredients: ["Anti-oxidant", "Anti-inflammatory", "Anti-bacterial"],
+    //    price: 8,
+    //    emoji: "🌱",
+    //    id: 3
+    //}
 ];

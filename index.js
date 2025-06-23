@@ -33,6 +33,7 @@ function resetOrder() {
 
         totalPrice = 0;
         orderInstanceId = 1;
+        itemsCount = {};
 
         /*Reset Form*/
 
@@ -86,7 +87,9 @@ function handleRemoveClick(item) {
         
         /*Update Global Vars*/
         
-        itemsCount[menuId] = (itemsCount[menuId] || 0) - 1;
+        if (itemsCount[menuId]) {
+                itemsCount[menuId] = itemsCount[menuId] - 1;
+        } else return;
 
         totalPrice -= itemPrice;
 
