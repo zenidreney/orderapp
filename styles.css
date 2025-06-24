@@ -18,9 +18,8 @@ main {
 
 button:hover,
 button:focus {
-    filter: brightness(0.9)
+    filter: brightness(0.9);
 }
-
 
 /*TYPO*/
 
@@ -132,32 +131,27 @@ article {
     flex-direction: column;
 }
 
-
 .complete-order-container,
 .single-order-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 0.5em;
-   
 }
 
-    .ordered-item-name{
-        flex-basis: 60%;
+.ordered-item-name {
+    flex-basis: 60%;
+}
+.remove-btn {
+    flex-basis: 20%;
+}
+.item-price {
+    flex-basis: 20%;
+}
 
-    }
-    .remove-btn {
-        flex-basis: 20%;
-
-    }
-    .item-price {
-        flex-basis: 20%;
-
-    }
-
-    .item-price {
-        text-align: right;
-    }
+.item-price {
+    text-align: right;
+}
 
 .complete-order-container {
     border-top: 1px solid #393333;
@@ -181,20 +175,18 @@ article {
     margin: 0 0.5em;
 }
 
-
 .ordered-item-name {
     display: flex;
     align-items: center;
 }
 
-
 .remove-btn {
     border: none;
     color: #ffffff;
     font-weight: 700;
-    background-color: #E63946;
+    background-color: #e63946;
     border-radius: 3px;
-    cursor: pointer; 
+    cursor: pointer;
     max-width: 5rem;
 }
 
@@ -203,21 +195,18 @@ article {
     color: #393333;
 }
 
-
 .modal-close-btn {
     position: absolute;
     top: 5px;
     right: 5px;
     border-radius: 3px;
-    border:none;
+    border: none;
     cursor: pointer;
     width: 1.5em;
-    background-color: #E63946;
+    background-color: #e63946;
     color: #ffffff;
     font-weight: 800;
-    
 }
-
 
 /*Payment Modal with its Overlay Effect*/
 
@@ -225,7 +214,7 @@ article {
 .modal-overlay {
     box-sizing: border-box;
     width: 95vw;
-    max-height: 500px;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -243,6 +232,7 @@ article {
 
 .payment-details {
     max-width: 524px;
+    max-height: 500px;
     height: 542px;
 }
 
@@ -332,17 +322,13 @@ form input::placeholder {
     .confirm-order {
         line-height: 1rem;
     }
-
 }
 
 @media (min-width: 1025px) {
-    
     .order-container {
         width: 18em;
         position: fixed;
         top: 5em;
         right: 5em;
     }
-    
-    
 }
