@@ -26,6 +26,7 @@
             <div class="header-text">
                 <h1>The Healing Leaf</h1>
                 <h2>Easiest way to buy the herb you need</h2>
+                <h3>Click below to add to your basket</h3>
             </div>
         </header>
 
@@ -34,14 +35,7 @@
         <main>
             <section id="render-items">
                 <!--
-                <article class="item-container">
-                    <div class="item-details">
-                        <h3>Name</h3>
-                        <p>Ingredients</p>
-                        <h3>Price $</h3>
-                    </div>
-                    <button class="add-item-btn">+</button>
-                </article>
+                            From appendItemHtml function
                 -->
             </section>
 
@@ -51,17 +45,7 @@
                 <h2 class="text-center">Your Order</h2>
                 <div id="ordered-items-container" class="ordered-items-container">
                     <!--
-                    <div class="single-order-container">
-                        <h2 id="ordered-item-name" class="ordered-item-name">Item</h2>
-                        <span class="remove-btn-span"><button class="remove-btn">remove</button></span>
-                        <h2 id="item-price">Price $</h2>
-                    </div>
-                
-                    <div class="single-order-container">
-                        <h2 class="ordered-item-name">Item</h2>
-                        <span class="remove-btn-span"><button class="remove-btn">remove</button></span>
-                        <h2>Price $</h2>
-                    </div>
+                          From handleAddClick & handleRemoveClick functions
                     -->
                 </div>
                 <div class="complete-order-container">
@@ -106,9 +90,9 @@
             <!--CONFIRMATION-->
 
             <section id="confirm-order" class="confirm-order">
-                <!--Confirmation from JS-->
-
-                <!--<p>Thanks, Name! Your order is on its way!</p>-->
+                           
+                            <!--From hanlePayBtn function-->
+                            
             </section>
         </main>
 
@@ -124,6 +108,7 @@
                 const orderModal = document.getElementById("modal-overlay");
                 orderModal.classList.add("hidden");
             })
+            
         </script>
     </body>
 </html>

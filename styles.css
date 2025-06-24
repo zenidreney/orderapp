@@ -26,11 +26,11 @@ button:focus {
 
 h1,
 h2 {
-    margin: 1em 0;
+    margin: 0.3em 0;
 }
 
 h3 {
-    margin: 0.375em 0;
+    margin: 0.1em 0;
     font-weight: 400;
 }
 
@@ -52,7 +52,7 @@ header {
     display: block;
     margin: 0 auto;
     width: 100%;
-    height: 5em;
+    height: 8em;
     background-color: #386641;
 }
 
@@ -66,16 +66,14 @@ header {
 header h1 {
     font-weight: 400;
     font-size: 2.44rem;
-    line-height: 24px;
-    letter-spacing: 0%;
+    letter-spacing: 1px;
 }
 
 header h2 {
     font-family: Smythe;
     font-weight: 400;
     font-size: 1.4rem;
-    line-height: 13.8px;
-    letter-spacing: 0%;
+    letter-spacing: 1.45px;
 }
 
 /*Main Section*/
@@ -225,7 +223,9 @@ article {
 
 .payment-details,
 .modal-overlay {
+    box-sizing: border-box;
     width: 95vw;
+    max-height: 500px;
     position: fixed;
     top: 0;
     left: 0;
