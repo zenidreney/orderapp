@@ -352,7 +352,7 @@ form input::placeholder {
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1145px) {
     .order-container {
         width: 18em;
         position: fixed;
